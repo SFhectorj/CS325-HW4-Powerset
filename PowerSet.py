@@ -1,6 +1,8 @@
 def powerset(input_set):
     """
-    :return:
+    This serves as a helper function to recursively call the all_subsets function.
+    The goal for this function is to initialize result list, and the current_subsets
+    list.
     """
     # This list will hold all subsets
     result = []
@@ -11,6 +13,11 @@ def powerset(input_set):
 
 
 def all_subsets(current_element, current_subset, input_set, result):
+    """
+    This is a helper function that manages the subsets that will be called by the
+    power set function. This function employs the back tracking method by removing the
+    previous element from the current subset.
+    """
     # Base case: When the tracker reaches zero, all elements have been processed.
     if current_element < 0:
         # Copy the current subset to the final result.
@@ -20,6 +27,7 @@ def all_subsets(current_element, current_subset, input_set, result):
 
     # First Option: Include the element in the subset
     current_subset.append(input_set[current_element])
+
     # Recursive call with the next element
     all_subsets(current_element - 1, current_subset, input_set, result)
 
