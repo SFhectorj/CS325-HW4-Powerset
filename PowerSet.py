@@ -23,6 +23,9 @@ def all_subsets(current_element, current_subset, input_set, result):
     # Recursive call with the next element
     all_subsets(current_element - 1, current_subset, input_set, result)
 
+    # Employ backtracking by removing the last added element.
+    current_subset.pop()
+
     # Second Option: Exclude the element and continue on
     all_subsets(current_element - 1, current_subset, input_set, result)
 
