@@ -4,6 +4,9 @@ def powerset(input_set):
     """
     # This list will hold all subsets
     result = []
+    # Initializes the current element to the back of the list  and
+    # the current subset to an empty list.
+    all_subsets(len(input_set) - 1, [], input_set, result)
     return result
 
 
