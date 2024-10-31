@@ -20,4 +20,7 @@ def all_subsets(current_element, current_subset, input_set, result):
     # Recursive call with the next element
     all_subsets(current_element - 1, current_subset, input_set, result)
 
+    # Second Option: Exclude the element and continue on
+    all_subsets(current_element - 1, current_subset, input_set, result)
+
 
